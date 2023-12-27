@@ -12,7 +12,29 @@ const excelToJson = (path) => {
 
         const jsonData = XLSX.utils.sheet_to_json(worksheet)
 
-        return jsonData
+        let stringJson = JSON.stringify(jsonData);
+
+        stringJson = stringJson.replace("\"มีความจำเป็นต้อง\":", "\"mustTo\":");
+        stringJson = stringJson.replace("\"ชื่อ -สกุล\":", "\"name\":");
+        stringJson = stringJson.replace("\"เบอร์โทร\":", "\"phonenum\":");
+        stringJson = stringJson.replace("\"ฝ่าย\":", "\"team\":");
+        stringJson = stringJson.replace("\"รายการ\":", "\"item\":");
+        stringJson = stringJson.replace("\" วงเงิน \":", "\"value\":");
+        stringJson = stringJson.replace("\" เหตผล\":", "\"reason\":");
+        stringJson = stringJson.replace("\"กรรมการ  TOR + ราคากลาง\":", "\"TORcommitter\":");
+        stringJson = stringJson.replace("\"กรรมการจัดซื้อ\":", "\"purchasecommitter\":");
+        stringJson = stringJson.replace("\"กรรมการตรวจรับ\":", "\"receivecommitter\":");
+        stringJson = stringJson.replace("\"ใบเสนอราคา\":", "\"offer\":");
+        stringJson = stringJson.replace("\" TOR\":", "\"TOR\":");
+        stringJson = stringJson.replace("\"แหล่งเงิน\":", "\"moneysource\":");
+        stringJson = stringJson.replace("\"ผู้อนุมัติแหล่งเงิน\":", "\"moneycommitter\":");
+        stringJson = stringJson.replace("\"อีเมลผู้ส่ง\":", "\"email\":");
+
+        const data = JSON.parse(stringJson);
+
+        // console.log(data)
+
+        return data
 
     } catch (error) {
 
