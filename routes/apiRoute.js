@@ -16,12 +16,16 @@ const excelToJson = (path) => {
 
         stringJson = stringJson.replace("\"มีความจำเป็นต้อง\":", "\"mustTo\":");
         stringJson = stringJson.replace("\"ชื่อ -สกุล\":", "\"name\":");
+        stringJson = stringJson.replace("\"ชื่อ-สกุล\":", "\"name\":");
         stringJson = stringJson.replace("\"เบอร์โทร\":", "\"phonenum\":");
         stringJson = stringJson.replace("\"ฝ่าย\":", "\"team\":");
         stringJson = stringJson.replace("\"รายการ\":", "\"item\":");
         stringJson = stringJson.replace("\" วงเงิน \":", "\"value\":");
-        stringJson = stringJson.replace("\" เหตผล\":", "\"reason\":");
+        stringJson = stringJson.replace("\"วงเงิน\":", "\"value\":");
+        stringJson = stringJson.replace("\" เหตุผล\":", "\"reason\":");
+        stringJson = stringJson.replace("\"เหตุผล\":", "\"reason\":");
         stringJson = stringJson.replace("\"กรรมการ  TOR + ราคากลาง\":", "\"TORcommitter\":");
+        stringJson = stringJson.replace("\"กรรมการTOR + ราคากลาง\":", "\"TORcommitter\":");   
         stringJson = stringJson.replace("\"กรรมการจัดซื้อ\":", "\"purchasecommitter\":");
         stringJson = stringJson.replace("\"กรรมการตรวจรับ\":", "\"receivecommitter\":");
         stringJson = stringJson.replace("\"ใบเสนอราคา\":", "\"offer\":");
