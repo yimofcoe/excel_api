@@ -62,13 +62,15 @@ const excelToJson = (path) => {
 //incoming
 router.get("/incoming", (req, res) => {
   const jsonOutput = excelToJson(process.env.INCOMING);
+  console.log("incoming api has used")
   res.json(jsonOutput);
 });
 
 router.get("/incoming/:index", (req, res) => {
   const index = req.params.index;
   const jsonOutput = excelToJson(process.env.INCOMING);
-  if (jsonOutput[index - 1]) {
+  console.log("incoming api has used")  
+if (jsonOutput[index - 1]) {
     res.json(jsonOutput[index - 1]);
   } else {
     res.json({});
@@ -78,12 +80,14 @@ router.get("/incoming/:index", (req, res) => {
 //confirm
 router.get("/confirm", (req, res) => {
   const jsonOutput = excelToJson(process.env.CONFIRM);
-  res.json(jsonOutput);
+  console.log("confirm api has used")  
+res.json(jsonOutput);
 });
 
 router.get("/confirm/:index", (req, res) => {
   const index = req.params.index;
   const jsonOutput = excelToJson(process.env.CONFIRM);
+  console.log("confirm api has used")  
   if (jsonOutput[index - 1]) {
     res.json(jsonOutput[index - 1]);
   } else {
@@ -91,15 +95,17 @@ router.get("/confirm/:index", (req, res) => {
   }
 });
 
-//confirm
+//not_confirm
 router.get("/not_confirm", (req, res) => {
   const jsonOutput = excelToJson(process.env.NOT_CONFIRM);
-  res.json(jsonOutput);
+  console.log("not_confirm api has used")  
+res.json(jsonOutput);
 });
 
 router.get("/not_confirm/:index", (req, res) => {
   const index = req.params.index;
   const jsonOutput = excelToJson(process.env.NOT_CONFIRM);
+  console.log("not_confirm api has used")  
   if (jsonOutput[index - 1]) {
     res.json(jsonOutput[index - 1]);
   } else {
@@ -110,12 +116,14 @@ router.get("/not_confirm/:index", (req, res) => {
 //money confirm
 router.get("/money_confirm", (req, res) => {
   const jsonOutput = excelToJson(process.env.MONEY_CONFIRM);
+  console.log("money_confirm api has used")
   res.json(jsonOutput);
 });
 
 router.get("/money_confirm/:index", (req, res) => {
   const index = req.params.index;
   const jsonOutput = excelToJson(process.env.MONEY_CONFIRM);
+  console.log("money_confirm api has used")
   if (jsonOutput[index - 1]) {
     res.json(jsonOutput[index - 1]);
   } else {
