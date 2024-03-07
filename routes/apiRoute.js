@@ -42,6 +42,7 @@ const excelToJson = (path) => {
       stringJson = stringJson.replace('"ใบเสนอราคา":', '"offer":');
       stringJson = stringJson.replace('" TOR":', '"TOR":');
       stringJson = stringJson.replace('"แหล่งเงิน":', '"moneysource":');
+      stringJson = stringJson.replace('"วันที่ยื่นคำร้อง":', '"submitTime":');
       stringJson = stringJson.replace(
         '"ผู้อนุมัติแหล่งเงิน":',
         '"moneycommitter":'
